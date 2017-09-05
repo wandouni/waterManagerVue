@@ -1,0 +1,40 @@
+{
+  "permission": 1,
+  "selectFactory": [
+    {
+      "muid": 2,
+      "muAccess": "weilong",
+      "muPasswd": "12323",
+      "muName": "21cn",
+      "address": "广州天河区",
+      "permission": 2
+    },
+    {
+      "muid": 4,
+      "muAccess": "long",
+      "muPasswd": "123456",
+      "muName": "世纪龙",
+      "address": "广州天河区",
+      "permission": 2
+    },
+    {
+      "muid": 5,
+      "muAccess": "weiwei",
+      "muPasswd": "14321234",
+      "muName": "番禺水厂",
+      "address": "广州番禺区",
+      "permission": 2
+    },
+    {
+      "muid": 7,
+      "muAccess": "weiwe",
+      "muPasswd": "123456",
+      "muName": "李先生",
+      "address": "天下游",
+      "permission": 2
+    }
+  ],
+  "index": {
+
+  }
+}
