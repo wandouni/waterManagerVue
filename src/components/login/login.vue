@@ -7,7 +7,7 @@
           <el-input type="username" v-model="ruleForm2.username" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="checkPass">
-          <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+          <el-input type="password" v-model="ruleForm2.password" auto-complete="off"></el-input>
         </el-form-item>
         </el-form-item>
         <el-form-item>
@@ -21,22 +21,6 @@
 <script type="text/ecmascript-6">
   export default {
     data () {
-      let checkAge = (rule, value, callback) => {
-        if (!value) {
-          return callback(new Error('年龄不能为空'))
-        }
-        setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('请输入数字值'))
-          } else {
-            if (value < 18) {
-              callback(new Error('必须年满18岁'))
-            } else {
-              callback()
-            }
-          }
-        }, 1000)
-      }
       let validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入密码'))
@@ -50,17 +34,11 @@
       return {
         ruleForm2: {
           username: '',
-          pass: '',
+          password: ''
         },
         rules2: {
-          pass: [
+          password: [
             {validator: validatePass, trigger: 'blur'}
-          ],
-          checkPass: [
-            {validator: validatePass2, trigger: 'blur'}
-          ],
-          age: [
-            {validator: checkAge, trigger: 'blur'}
           ]
         }
       }
@@ -75,9 +53,6 @@
             return false
           }
         })
-      },
-      resetForm (formName) {
-        this.$refs[formName].resetFields()
       }
     }
   }

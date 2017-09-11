@@ -21,6 +21,10 @@ export default new VueRouter({
       path: '/',
       name: 'main',
       component: main,
+      redirect: '/index',
+      meta: {
+        requireAuth: true
+      },
       children: [
         {
           path: '/index',

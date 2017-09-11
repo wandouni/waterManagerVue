@@ -5,5 +5,13 @@
 import router from './router'
 
 router.beforeEach((to, from, next) => {
-  next('/login')
+  if (to.meta.requireAuth) {
+    if (getToken()) {
+      if (to.path === '/login') {
+        next('/')
+      }
+    }
+  } else {
+    next()
+  }
 })
